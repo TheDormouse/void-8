@@ -13,7 +13,7 @@ export default function Box({position, color}) {
      <>
      <points ref={ref}>
         <sphereGeometry args={[1, 48, 48]} />
-        <pointsMaterial color="#5786F5" size={0.015} sizeAttenuation />
+        <pointsMaterial color="white" size={0.015} sizeAttenuation />
        
       </points>
       <Text color='white' anchorX='center' anchorY='middle' scale={[.2, .2, .2]}>
