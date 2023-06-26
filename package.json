@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build": "next build",
+    "start": "next start"
   },
   "keywords": [],
   "author": "",
