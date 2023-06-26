@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "unthrottled.doki-theme",
+        "formulahendry.auto-rename-tag",
+        "redhat.fabric8-analytics",
+        "wix.glean",
+        "wix.vscode-import-cost"
+    ]
+}
