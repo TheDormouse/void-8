@@ -1,5 +1,8 @@
 import { Layout } from './client/Layout'
 import './global.css'
+import localFont from 'next/font/local'
+
+const pixFont = localFont({ src: './PixeloidMono-d94EV.ttf' })
 
 export const metadata = {
   title: '║8',
@@ -8,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' className='antialiased'>
+    <html lang='en' className={pixFont.className}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head

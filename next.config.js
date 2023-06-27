@@ -26,7 +26,7 @@ const nextConfig = {
     webpack(config, { isServer }) {
         // audio support
         config.module.rules.push({
-            test: /\.(ogg|mp3|wav|mpe?g)$/i,
+            test: /\.(ogg|mp3|wav|mpe?g|woff)$/i,
             exclude: config.exclude,
             use: [
                 {
@@ -45,7 +45,7 @@ const nextConfig = {
 
         // shader support
         config.module.rules.push({
-            test: /\.(glsl|vs|fs|vert|frag)$/,
+            test: /\.(glsl|vs|fs|vert|frag)$ /,
             exclude: /node_modules/,
             use: ['raw-loader', 'glslify-loader'],
         })
