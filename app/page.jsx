@@ -13,7 +13,7 @@ export default function Home() {
                 <Sound url={space} />
                 <Common />
             </View>
-            <p style={{ color: 'white', textAlign: 'center', paddingTop: '48vh' }}>The system is being configured. Please check back later.</p>
+            <p style={{ color: 'white', textAlign: 'center', paddingTop: '48vh' }}>The portal is being configured. Please check back later.</p>
 
         </>
     )
