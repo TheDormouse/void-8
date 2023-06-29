@@ -17,7 +17,16 @@ export const Tracking = ({setLandmarks}) => {
         let offscreenCanvas = new OffscreenCanvas(640, 480);
         workerRef.current.postMessage({ offscreenCanvas }, [offscreenCanvas]);
 
-        video.onloadedmetadata = () => {
+        const captureFrame = () => {
+          // Draw the current video frame onto the offscreen canvas
+          let context = offscreenCanvas.getContext('2d');
+          context.drawImage(videoRef.current, 0, 0, 640, 480);
+
+          // Request the next frame
+          requestAnimationFrame(captureFrame);
+        };
+
+        video.onPlaying = () => {
           // Start capturing frames when the video is ready
           requestAnimationFrame(captureFrame);
         };
@@ -26,16 +35,6 @@ export const Tracking = ({setLandmarks}) => {
         console.log("An error occurred: " + err);
       });
   }, []);
-
-  const captureFrame = () => {
-    // Draw the current video frame onto the offscreen canvas
-    let offscreenCanvas = workerRef.current.canvas;
-    let context = offscreenCanvas.getContext('2d');
-    context.drawImage(videoRef.current, 0, 0, 640, 480);
-
-    // Request the next frame
-    requestAnimationFrame(captureFrame);
-  };
 
   useEffect(() => {
     workerRef.current = new Worker("./tracker.js");
