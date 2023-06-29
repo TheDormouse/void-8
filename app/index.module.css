@@ -4,6 +4,7 @@
     z-index: -9999;
     display: block;
     position: fixed;
+    background-color: transparent;
 }
 
 .title {

@@ -1,8 +1,8 @@
 'use client'
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber';
-import { Text } from '@react-three/drei'
-
+import { Stars, Text } from '@react-three/drei'
+import { Sparkles } from '@react-three/drei'
 
 export default function Box({ position, color }) {
   const ref = useRef()
@@ -15,6 +15,8 @@ export default function Box({ position, color }) {
         <pointsMaterial color="white" size={0.015} sizeAttenuation />
 
       </points>
+      <Sparkles count={200} scale={[1, 1, 1]} size={3} speed={1} opacity={.2} />
+      <Stars radius={50} depth={50} count={5000} factor={4} saturation={1} fade speed={1.5} />
 
     </>
 
