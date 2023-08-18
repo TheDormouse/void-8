@@ -10,20 +10,20 @@ const useUserInteracted = () => {
     const handleInteraction = () => {
       setInteracted(true);
       // Remove event listeners after interaction
-      window.removeEventListener("mousemove", handleInteraction);
+      window.removeEventListener("click", handleInteraction);
       window.removeEventListener("keydown", handleInteraction);
       window.removeEventListener("touchstart", handleInteraction);
     };
 
     // Add event listeners
-    window.addEventListener("mousemove", handleInteraction);
+    window.addEventListener("click", handleInteraction);
     window.addEventListener("keydown", handleInteraction);
     window.addEventListener("touchstart", handleInteraction);
 
     // Cleanup function
     return () => {
       // Remove event listeners on unmount
-      window.removeEventListener("mousemove", handleInteraction);
+      window.removeEventListener("click", handleInteraction);
       window.removeEventListener("keydown", handleInteraction);
       window.removeEventListener("touchstart", handleInteraction);
     };
