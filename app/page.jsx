@@ -1,22 +1,21 @@
-
-import Box from './Box'
-import { Common, View } from './client/View'
-import { view } from './index.module.css'
-import space from './sounds/SF-bkg-space-loop-1.wav'
-import { Sound } from './Sound'
-import Face from './Face'
+import Box from "./Box";
+import { Common, View } from "./client/View";
+import { view } from "./index.module.css";
+import space from "./sounds/SF-bkg-space-loop-1.wav";
+import { Sound } from "./Sound";
+import Face from "./Face";
 
 export default function Home() {
-    return (
-        <>
-            <View className={view}>
-                <Box position={[0, 0, 0]} />
-                <Sound url={space} />
-                <Face />
-                <Common />
-            </View>
-            <p style={{ color: 'white', textAlign: 'center', paddingTop: '48vh' }}>The portal is being configured. Please check back later.</p>
-
-        </>
-    )
+  return (
+    <>
+      <View className={view}>
+        <Box position={[0, 0, 0]} />
+        <Sound url={space} />
+        <Common />
+      </View>
+      <p style={{ color: "white", textAlign: "center", paddingTop: "48vh" }}>
+        The portal is being configured. Please check back later.
+      </p>
+    </>
+  );
 }
