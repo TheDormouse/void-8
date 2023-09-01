@@ -3,7 +3,6 @@ import { Common, View } from "./client/View";
 import { view } from "./index.module.css";
 import space from "./sounds/SF-bkg-space-loop-1.wav";
 import { Sound } from "./Sound";
-import Face from "./Face";
 
 export default function Home() {
   return (
