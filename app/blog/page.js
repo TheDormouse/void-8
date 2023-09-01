@@ -90,9 +90,7 @@ export default async function PostsPage() {
       <div style={{ maxWidth: 600, margin: "auto", color: "white" }}>
         {sortedPosts.map((post, index) => (
           <div key={index}>
-            <Link href={`/blog/${post.frontmatter.slug}`}>
-              <h1>{post.frontmatter.title}</h1>
-            </Link>
+            <h1>{post.frontmatter.title}</h1>
             <p>Posted: {post.frontmatter.date}</p>
             <hr />
             <MdxContent source={post.serialized} />
