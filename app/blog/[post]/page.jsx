@@ -4,7 +4,7 @@ import { MdxContent } from "../mdx-content";
 
 async function getPost(filepath) {
   // Read the file from the filesystem
-  const raw = await fs.readFile(filepath, "utf-8");
+  const raw = await fs.readFile(`./posts/${filepath}.mdx`, "utf-8");
 
   // Serialize the MDX content and parse the frontmatter
   const serialized = await serialize(raw, {
@@ -12,7 +12,8 @@ async function getPost(filepath) {
   });
 
   // Typecast the frontmatter to the correct type
-  const frontmatter = serialized.frontmatter;
+  let frontmatter = serialized.frontmatter;
+  frontmatter.slug = filepath;
 
   // Return the serialized content and frontmatter
   return {
@@ -24,7 +25,7 @@ async function getPost(filepath) {
 export default async function Home({ params }) {
   const { post } = params;
   // Get the serialized content and frontmatter
-  const { serialized, frontmatter } = await getPost(`./posts/${post}.mdx`);
+  const { serialized, frontmatter } = await getPost(post);
 
   return (
     <div style={{ maxWidth: 600, margin: "auto", color: "white" }}>
