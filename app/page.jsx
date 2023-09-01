@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <View className={view}>
         <Box position={[0, 0, 0]} />
-        <Sound url={space} positionalAudioProps={position: [0, 0, 0]} />
+        <Sound url={space} positionalAudioProps={{ position: [0, 0, 0] }} />
         <Common />
       </View>
       <p style={{ color: "white", textAlign: "center", paddingTop: "48vh" }}>
