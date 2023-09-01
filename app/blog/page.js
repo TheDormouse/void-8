@@ -83,7 +83,7 @@ export default async function PostsPage() {
 
       <View className={view}>
         <Box position={[0, 0, 0]} />
-        <Sound url={space} positionalAudioProps={{ position: [0, 0, 0] }} />
+        <Sound url={space} />
         <Common />
       </View>
 
@@ -101,7 +101,7 @@ export default async function PostsPage() {
       </div>
       <div style={sidebarStyles}>
         <Image src={profilepicture} width={100} height={100} />
-        <h3>Marchy's Blog</h3>
+        <h3>Marchy&apos;s Blog</h3>
         <p>Welcome to my incoherent ramblings. Enjoy</p>
       </div>
     </>
